@@ -1,0 +1,46 @@
+.Side-Bar {
+    padding:60px 30px 0px 30px;
+    flex:var(--sidebar-flex);
+    background: rgb(169, 186, 157);
+    background: linear-gradient(180deg,  rgb(118, 133, 108) 50%, rgb(143, 148, 140) 80%);
+}
+
+.Side-Bar-Item {
+  font-size:var(--fontsize-nav);
+  text-align: center;
+  list-style-type: none;
+  text-decoration: none;
+  color: black !important;
+}
+
+.Side-Bar-Item-Active{
+    font-size:var(--fontsize-nav);
+    font-weight: bold;
+    text-align: center;
+    list-style-type: none;
+    text-decoration: none;
+    color: black !important;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Barlow:800&display=swap');
+
+ul li {
+  position: relative;
+  margin:40px;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: 800;
+  color: black;
+  overflow: hidden;
+  background: linear-gradient(to right, black, black 50%, rgb(158, 154, 154) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+}
+
+ul li:hover {
+    background-position: 0 100%;
+}
