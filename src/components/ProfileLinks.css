@@ -1,0 +1,16 @@
+.ProfileLinks {
+    position: absolute;
+    margin-top: 20px;
+    display: flex;
+    bottom: 60px;
+}
+
+.ProfileLinks i {
+    padding-right: 30px;
+    font-size: 25px;
+    color: #9a9b9c;
+}
+
+.ProfileLinks i:hover{
+    color: #ffffff;
+}

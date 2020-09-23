@@ -32,7 +32,7 @@ ul li {
   font-weight: 800;
   color: black;
   overflow: hidden;
-  background: linear-gradient(to right, black, black 50%, rgb(158, 154, 154) 50%);
+  background: linear-gradient(to right, black, black 50%, rgb(177, 175, 175) 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -1,21 +1,28 @@
 import React from 'react';
 import './LandingPage.css';
+import Typewriter from 'typewriter-effect';
+import profilepic from '../images/enlightenment.jpg';
+import ProfileLinks from './ProfileLinks'
+
 
 function LandingPage() {
   return (
     <div className="LandingPage">
-      <header className="Landing-Page-header">
-      </header>
       <body>
-          <h1>Justin Sumner</h1>
-          <h3>Software Developer</h3>
-          <br></br>
-          <p>
-              Hello! Firstly, thank you for taking the time to view my Resume website. I am a graduating senior studying 
-              Computer Science at the University of Tennessee, Knoxville. While I may just now be graduating, I have nearly
-              three years of professional experiance in the field working for two international corporations, Nissan Motor 
-              Corporation and Siemens Healthineers...
-          </p>
+        <img src={profilepic} className="profilepic"></img>
+        <br></br>
+        <Typewriter
+          onInit={(typewriter) => {
+            typewriter.typeString('Justin Sumner\n')
+            .pauseFor(750)
+            .typeString(' - Software Devlep')
+            .pauseFor(100)
+            .deleteChars(3)
+            .typeString('eloper')
+            .start();
+          }}
+        />
+        <ProfileLinks />
       </body>
     </div>
   );
