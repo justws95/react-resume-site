@@ -1,3 +1,5 @@
+
+/*
 .Side-Bar {
     padding:60px 30px 0px 30px;
     flex:var(--sidebar-flex);
@@ -5,7 +7,7 @@
     background: linear-gradient(180deg,  rgb(118, 133, 108) 50%, rgb(143, 148, 140) 80%);
 }
 
-.Side-Bar-Item {
+.Nav-Item {
   font-size:var(--fontsize-nav);
   text-align: center;
   list-style-type: none;
@@ -32,7 +34,7 @@ ul li {
   font-weight: 800;
   color: black;
   overflow: hidden;
-  background: linear-gradient(to right, black, black 50%, rgb(177, 175, 175) 50%);
+  background: linear-gradient(to , black, black 50%, rgb(177, 175, 175) 50%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -43,4 +45,28 @@ ul li {
 
 ul li:hover {
     background-position: 0 100%;
+}
+*/
+nav {
+  padding:60px 30px 0px 30px ;
+  flex:var(--sidebar-flex);
+  background: rgb(169, 186, 157);
+  background: linear-gradient(180deg,  rgb(80, 93, 72) 50%, rgb(58, 55, 57) 80%);
+}
+
+nav ul {
+  font-size:var(--fontsize-nav) ;
+  text-align: center;
+  list-style-type: none;
+  text-decoration: none;
+  color: white !important;
+}
+
+nav ul li {
+  margin:40px;
+}
+
+.active {
+  font-weight: bolder;
+  text-shadow: 2px 3px #F0F0F0;
 }
