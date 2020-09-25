@@ -1,5 +1,5 @@
 import React from 'react';
-import './WebResume.css';
+//import './WebResume.css';
 
 
 function ResumeItem(props) {

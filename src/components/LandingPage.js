@@ -1,7 +1,7 @@
 import React from 'react';
-import './LandingPage.css';
+//import './LandingPage.css';
 import Typewriter from 'typewriter-effect';
-import ProfileLinks from './ProfileLinks'
+import ProfileLinks from './ProfileLinks';
 
 
 function LandingPage() {

@@ -5,6 +5,9 @@ import SideBar from './SideBar';
 import LandingPage from './LandingPage';
 import AboutMe from './AboutMe';
 import WebResume from './WebResume';
+import Skills from './Skills';
+import Contact from './Contact';
+
 
 function App() {
     return (
@@ -19,6 +22,12 @@ function App() {
                 </Route>
                 <Route path="/web-resume">
                     <WebResume />
+                </Route>
+                <Route path="/skills">
+                    <Skills />
+                </Route>
+                <Route path="/contact">
+                    <Contact />
                 </Route>
             </div>
         </Router>

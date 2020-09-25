@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Link from "react-router-dom/Link";
-import './SideBar.css';
+//import './SideBar.css';
 
 //TODO: Figure out how to use the hooks api to set active state
 /*
@@ -58,7 +58,7 @@ function NavItem(props) {
 
 function SideBar() {
     return (
-      <div className="Side-Bar">
+      <div className="side-bar">
         <body>
             <nav>
                 <ul>
