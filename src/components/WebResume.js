@@ -17,8 +17,8 @@ function ResumeItem(props) {
 
 function WebResume() {
     return (
-        <div className="condiv">
-            <h1 className="subtopic">Web Resume</h1>
+        <div class="condiv">
+            <h1 class="subtopic">Web Resume</h1>
             <br></br>
             <h3>Professional Experiance</h3>
             <ResumeItem 

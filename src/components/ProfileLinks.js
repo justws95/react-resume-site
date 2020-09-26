@@ -4,7 +4,7 @@ import React from 'react';
 
 function ProfileLinks() {
     return (
-      <div className="profile-links">
+      <div class="profile-links">
         <a href="https://github.com/justws95" target="_blank" rel="noopener noreferrer">
           <i class="fab fa-github"></i>
         </a>

@@ -14,7 +14,7 @@
 body{
   font-family: 'Raleway';
 }
-.App
+.app
 {
   display: flex;
   width: 100vw;
@@ -34,7 +34,7 @@ nav
   flex:var(--condiv-flex);
 }
 
-.LandingPage
+.landing-page
 {
   display: flex;
   justify-content: center;
@@ -42,13 +42,13 @@ nav
   align-items: center;
   
 }
-.profilepic
+.landing-page-pic
 {
   border-radius: 50%;
   width: 200px;
   margin: 30px;
 }
-.typingeffect
+.typing-effect
 {
   font-size: var(--typing-font);
   margin-bottom: 30px;
@@ -127,14 +127,13 @@ h1,h2,h3,h4,p{
     --sidebar-flex:0;
     --typing-font:2rem;
   }
-  .App
+  .app
   {
     flex-direction: column;
   }
   .side-bar
   {
     padding: 30px;
-    flex:var(--sidebar-flex);
     background: rgb(238,103,143);
     background: linear-gradient(90deg, rgba(238,103,143,1) 50%, rgba(132,124,252,1) 80%);
   }
@@ -163,6 +162,10 @@ h1,h2,h3,h4,p{
     padding-right: 0px;
   }
 }
+
+
+
+
 /*
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap');
 

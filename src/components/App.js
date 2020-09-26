@@ -12,7 +12,7 @@ import Contact from './Contact';
 function App() {
     return (
         <Router>
-            <div className="App">
+            <div className="app">
                 <SideBar />
                 <Route exact path="/">
                     <LandingPage />
