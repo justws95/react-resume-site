@@ -135,7 +135,6 @@ h1,h2,h3,h4,p{
   }
   .side-bar
   {
-    padding: 30px;
     background: rgb(238,103,143);
     background: linear-gradient(90deg, rgba(238,103,143,1) 50%, rgba(132,124,252,1) 80%);
   }
