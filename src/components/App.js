@@ -13,7 +13,9 @@ function App() {
     return (
         <Router>
             <div className="app">
-                <SideBar />
+                <div id="side-bar-wrapper">
+                    <SideBar />
+                </div>
                 <Route exact path="/">
                     <LandingPage />
                 </Route>
