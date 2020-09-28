@@ -21,7 +21,8 @@ body{
   min-height: 100vh;
 }
 nav
-{
+{ 
+  min-height: 100vh;
   padding:60px 30px 0px 30px ;
   flex:var(--sidebar-flex);
   background: rgb(238,103,143);
@@ -85,9 +86,10 @@ h1,h2,h3,h4,p{
 .profile-links
 {
   position: absolute;
-  margin-top: 20px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
   display: flex;
-  bottom: 60px;
 }
 .profile-links i
 {
