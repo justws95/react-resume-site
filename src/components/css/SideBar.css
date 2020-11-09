@@ -1,0 +1,9 @@
+.header-group {
+    text-align: center;
+    /*outline: 2px solid white;*/
+}
+
+.header-group h4 {
+    margin-top: 0%;
+    color: rgb(13, 219, 164);
+}

@@ -1,0 +1,13 @@
+#skills-content-window {
+    display: inline-block;
+    padding: 20px;
+}
+
+#skills-description {
+    float: left;
+    width: 20%;
+}
+
+#skills-image-group {
+    float: right;
+}

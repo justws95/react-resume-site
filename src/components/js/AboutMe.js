@@ -4,8 +4,8 @@ import React from 'react';
 
 function AboutMe() {
     return (
-        <div className="condiv">
-            <h1 className="subtopic">About Me</h1>
+        <div>
+            <h1>About Me</h1>
             <br></br>
             <h3><b>Software Developer</b> | Graduating Senior</h3>
             <p>
