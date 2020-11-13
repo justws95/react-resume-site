@@ -1,36 +1,33 @@
 import React from 'react';
-import '../css/LandingPage.css';
-//import Typewriter from 'typewriter-effect';
-import mugshot from "../../assets/images/profile-pic.jpg"
 import { Container, Grid, Divider } from 'semantic-ui-react';
 
-/*
-function LandingPage() {
-  return (
-    <Container fluid textAlign='justified'>
-      <Grid stretched>
-        <Grid.Row columns={2}>
-          <Grid.Column stretched> 
-            <img src={mugshot} alt="Profile Picture" className='profile-pic'/>                
-          </Grid.Column>
-          <Grid.Column>
-            <h1 className='greeting'>I'm</h1>
-            <h1 className='colored-greeting'>Justin Sumner</h1>
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-    </Container>
-  );
-}*/
+import '../css/LandingPage.css';
+
+import mugshot from '../../assets/images/profile-pic.jpg';
 
 
 function LandingPage() {
   return (
-    <div className='landing-page-header'>
-      <img src={mugshot} alt="Profile Pic" className='profile-pic'/>
-      <h1 className='greeting'>I'm</h1>
-      <h1 className='colored-greeting'>Justin Sumner</h1>    
-    </div>
+    <Grid stretched container>
+      <Grid.Row stretched textAlign='justified'>
+        <div className='landing-page-header'>
+          <img src={mugshot} alt='Profile Pic' className='profile-pic'/>
+          <h1 className='greeting'>I'm</h1>
+          <h1 className='colored-greeting'>Justin Sumner</h1>    
+        </div>
+      </Grid.Row>
+      <Grid.Row stretched>
+        <Container text={true} textAlign='justified'>
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+              ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+              laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+              voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+              cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </Container>
+      </Grid.Row>
+    </Grid>
   );
 }
 

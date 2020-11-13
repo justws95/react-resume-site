@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import "../css/SideBar.css";
-import Link from 'react-router-dom/Link';
+import { Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react'
+
 import ProfileLinks from './ProfileLinks';
+
+import '../css/SideBar.css';
 
 
 function Header()

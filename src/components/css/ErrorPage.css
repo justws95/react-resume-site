@@ -1,0 +1,20 @@
+.ui.header.error-page-404-header{
+    font-size: 200px;
+    color: #0c9c75;
+}
+ 
+.ui.grid.error-page-404-content-grid{
+    padding-left: 100px;
+    padding-right: 35px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+}
+
+.ui.grid.error-page-404-content-grid p{
+    font-size: 28px;
+}
+
+.ui.button.error-page-button{
+    color: #0ddba4;
+    background-color: #313332;
+}

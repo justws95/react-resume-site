@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import '../css/Skills.css';
+import * as shuffle from 'fisher-yates';
 import { 
-    Image, 
+    Image,
+    Grid, 
     Divider, 
     Segment, 
     Container
  } from 'semantic-ui-react';
+
+ import PageHeader from './PageHeader';
+
+ //import '../css/Skills.css';
 
 // Imports for technology icons
 import boostCppIcon from '../../assets/icons/boost-logo.svg';
@@ -21,9 +26,6 @@ import pythonIcon from '../../assets/icons/python.png';
 import reactIcon from '../../assets/icons/react.png';
 import semanticIcon from '../../assets/icons/semantic-ui.png';
 import sklearnIcon from '../../assets/icons/sklearn.png';
-
-
-let shuffle = require('fisher-yates');
 
 
 function Skills() {
@@ -170,78 +172,48 @@ function Skills() {
                 ui={false}
                 href={content.link}
                 target='_blank'
-                bordered={true}
+                bordered
             />
         );
     }
 
-    /*
     return (
-        <Grid columns={2}>
-            <Grid.Row>
-                <Grid.Column>
-                    <h1>My Skill Set</h1>
-                </Grid.Column>
-                <Grid.Column>
-                    <Segment raised>
-                        <Image.Group size='tiny'>
-                            {fillImage(mySkills)}
-                            {fillImage(mySkills)}
-                            {fillImage(mySkills)}
-                            {fillImage(mySkills)}
-                            <Divider hidden />
-                            {fillImage(mySkills)}
-                            {fillImage(mySkills)}
-                            {fillImage(mySkills)}
-                            {fillImage(mySkills)}
-                            <Divider hidden />
-                            {fillImage(mySkills)}
-                            {fillImage(mySkills)}
-                            {fillImage(mySkills)}
-                            {fillImage(mySkills)}
-                        </Image.Group>
-                    </Segment>
-                </Grid.Column>
-            </Grid.Row>
-        </Grid>
-    );
-    */
-   return (
-        <div id='skills-content-window'>
-            <div id='skills-description'>
-                <Container text={true} textAlign='justified'>
-                    <h1>My Skill Set</h1>
-                    <Divider hidden />
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-                        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-                        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
-                        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
-                        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </Container>
-            </div>
-            <div id='skills-image-group'>
-                <Segment raised>
-                    <Image.Group size='tiny'>
-                        {fillImage(mySkills)}
-                        {fillImage(mySkills)}
-                        {fillImage(mySkills)}
-                        {fillImage(mySkills)}
-                        <Divider hidden />
-                        {fillImage(mySkills)}
-                        {fillImage(mySkills)}
-                        {fillImage(mySkills)}
-                        {fillImage(mySkills)}
-                        <Divider hidden />
-                        {fillImage(mySkills)}
-                        {fillImage(mySkills)}
-                        {fillImage(mySkills)}
-                        {fillImage(mySkills)}
-                    </Image.Group>
-                </Segment>
-            </div>
-        </div>
+        <React.Fragment>
+            <PageHeader title="My Skills" />
+            <Grid stretched container columns={2}>
+                <Grid.Row stretched textAlign='justified'>
+                    <Grid.Column stretched width={7} verticalAlign='top'>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in 
+                            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat 
+                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                    </Grid.Column>
+                    <Grid.Column stretched>
+                        <Segment raised>
+                            <Image.Group size='tiny'>
+                                {fillImage(mySkills)}
+                                {fillImage(mySkills)}
+                                {fillImage(mySkills)}
+                                {fillImage(mySkills)}
+                                <Divider hidden />
+                                {fillImage(mySkills)}
+                                {fillImage(mySkills)}
+                                {fillImage(mySkills)}
+                                {fillImage(mySkills)}
+                                <Divider hidden />
+                                {fillImage(mySkills)}
+                                {fillImage(mySkills)}
+                                {fillImage(mySkills)}
+                                {fillImage(mySkills)}
+                            </Image.Group>
+                        </Segment>
+                    </Grid.Column>
+                </Grid.Row>
+            </Grid>
+        </React.Fragment>
     );
 }
 

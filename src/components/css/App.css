@@ -1,6 +1,7 @@
 .content-window {
-    background-color: #f8f8ff;
-    margin-right: 14.0%;
+    background-color: #f1f1e5;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .negative-space {
@@ -28,7 +29,7 @@
     display: block;
     content: "";
     float: left;
-    margin-left: 0%;
+    margin-left: -10px;
     margin-right: 0%;
     background-color: #0ddba4;
     background-image: -moz-linear-gradient(top, #0c9c75, #0ddba4);
@@ -47,7 +48,7 @@
     content: "";
     float: right;
     margin-left: 0%;
-    margin-right: 0%;
+    margin-right: -10px;
     background-color: #0c9c75;
     background-image: -moz-linear-gradient(top, #0c9c75, #0ddba4);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0c9c75), to(#0ddba4));

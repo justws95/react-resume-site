@@ -1,0 +1,21 @@
+.ui.header.resume-page-sub-header {
+    font-size: 28px;
+    color: #313332;
+    border-left: 4px solid #33e0b2;
+    padding-left: 3px;
+}
+
+.resume-page-entry {
+    padding-right: 15%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.resume-page-entry i {
+    color: #0c9c75;
+}
+
+.resume-page-entry h3 {
+    color: #313332;
+}
+ 
