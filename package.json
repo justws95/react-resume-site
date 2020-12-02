@@ -11,7 +11,6 @@
     "@testing-library/user-event": "^7.2.1",
     "email-validator": "^2.0.4",
     "fisher-yates": "^1.0.3",
-    "js-file-download": "^0.4.12",
     "prop-types": "^15.7.2",
     "pure-react-carousel": "^1.27.6",
     "react": "^16.13.1",
@@ -42,5 +41,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify-icons/logos": "^1.1.0",
+    "@iconify/react": "^1.1.3"
   }
 }

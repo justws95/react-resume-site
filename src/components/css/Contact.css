@@ -1,4 +1,9 @@
-.ui.button.contact-page-button{
+.ui.fluid.button.contact-page-button{
     color: #0ddba4;
     background-color: #313332;
+}
+
+.contact-page-contact-window {
+    padding-left: 20%;
+    padding-right: 20%;
 }

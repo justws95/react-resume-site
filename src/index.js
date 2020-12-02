@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'semantic-ui-css/semantic.min.css'
 import './index.css';
-import App from './components/js/App';
+import App from './components/jsx/App';
 
 
 ReactDOM.render(

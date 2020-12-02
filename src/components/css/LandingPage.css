@@ -1,24 +1,15 @@
-.profile-pic {
-    opacity: 0.95;
-    border-radius: 50%;
-    width: 250px;
-    height: 250px;
-    object-fit: cover;
-    object-position: center top;
-    float: left;
+.ui.grid.landing-page-grid-window {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
 }
 
-.greeting {
-    font-size: 70px;
+
+.ui.header.landing-page-header {
+    font-size: 64px;
     color: #313332;
 }
 
-.colored-greeting {
-    font-size: 70px;
-    color: #0ddba4;
-}
-
-.landing-page-header {
-    padding: 25px;
-    display: inline-flex;
+.ui.container.landing-page-main-text {
+    font-size: 21px;
 }

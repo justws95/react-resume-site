@@ -1,9 +1,24 @@
 .header-group {
     text-align: center;
-    /*outline: 2px solid white;*/
 }
 
 .header-group h4 {
     margin-top: 0%;
     color: rgb(13, 219, 164);
+}
+
+.ui.button.resume-download-button {
+    color: #0ddba4;
+    background-color: #313332;
+    margin-left: 5%;
+    width: 90%;
+}
+
+.deployed-with-group {
+    position: absolute;
+    bottom: 5%;
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
 }
