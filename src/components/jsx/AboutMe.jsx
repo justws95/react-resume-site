@@ -1,6 +1,6 @@
 import React, { createRef } from 'react';
 import PropTypes from 'prop-types';
-import { Grid, Button, Divider, Container, Sticky, Ref } from 'semantic-ui-react';=
+import { Grid, Button, Divider, Container, Sticky, Ref } from 'semantic-ui-react';
 import { CarouselProvider, Image, Slide, Slider, Dot } from 'pure-react-carousel';
 
 import PageHeader from './PageHeader';

@@ -23,6 +23,7 @@ const NegativeSpace = (props) => {
             {(!(props.isMobile)) &&
                 <Divider hidden />
             }
+        </div>
     );
 }
 
