@@ -1,33 +1,32 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, Button, Divider, Header } from 'semantic-ui-react';
-import { InlineIcon } from '@iconify/react';
-import herokuIcon from '@iconify-icons/logos/heroku';
-
-
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, Button, Divider } from 'semantic-ui-react';
 
 import ProfileLinks from './ProfileLinks';
 
 import '../css/SideBar.css';
 
 
-function SideBarHeader() {
+const SideBarHeader = () => {
+
     return (
         <div className='header-group'>
             <Divider hidden />
             <h1>Justin Sumner</h1>
-            <h4>Software Developer</h4>
+            <h3>Software Developer</h3>
         </div>
     );
 }
 
 
-function RedirectLinks() {
+const RedirectLinks = () => {
     const [downloadError, setDownloadError] = useState(false);
     const [resumeDownloadPending, setPendingDownload] = useState(false);
 
     return (
         <React.Fragment>
+            <Divider hidden />
+            <Divider hidden />
             <ProfileLinks />
             {/*
             <Popup 
@@ -76,10 +75,9 @@ function RedirectLinks() {
 }
 
 
-function SideBar() {
-    const [activeItem, setActive] = useState("HOME");
-
-
+const SideBar = () => {
+    const [activeItem, setActive] = useState(useLocation().pathname);
+    
     return (
         <Menu 
             inverted 
@@ -95,39 +93,39 @@ function SideBar() {
             <Menu.Item 
                 as={Link} 
                 to="/"
-                active={activeItem === "HOME"}
+                active={activeItem === "/"}
                 onClick={ e => {
-                    setActive("HOME");
+                    setActive("/");
                 }}
-            >
+            > 
                 HOME
             </Menu.Item>
             <Menu.Item 
                 as={Link} 
                 to="/resume"
-                active={activeItem === "RESUME"}
+                active={activeItem === "resume"}
                 onClick={ e => {
-                    setActive("RESUME");
+                    setActive("resume");
                 }}
             >
                 RESUME
             </Menu.Item>
             <Menu.Item 
                 as={Link} 
-                to="/skills"
-                active={activeItem === "SKILLS"}
+                to="/skillset"
+                active={activeItem === "/skillset"}
                 onClick={ e => {
-                    setActive("SKILLS");
+                    setActive("/skillset");
                 }}
             >
-                SKILLS            
+                SKILLSET            
             </Menu.Item>
             <Menu.Item 
                 as={Link} 
                 to="/portfolio"
-                active={activeItem === "PORTFOLIO"}
+                active={activeItem === "/portfolio"}
                 onClick={ e => {
-                    setActive("PORTFOLIO");
+                    setActive("/portfolio");
                 }}
             >
                 PORTFOLIO
@@ -135,9 +133,9 @@ function SideBar() {
             <Menu.Item 
                 as={Link} 
                 to="/about-me"
-                active={activeItem === "ABOUT ME"}
+                active={activeItem === "/about-me"}
                 onClick={ e => {
-                    setActive("ABOUT ME");
+                    setActive("/about-me");
                 }}
             >
                 ABOUT ME
@@ -145,31 +143,18 @@ function SideBar() {
             <Menu.Item 
                 as={Link} 
                 to="/contact"
-                active={activeItem === "CONTACT"}
+                active={activeItem === "/contact"}
                 onClick={ e => {
-                    setActive("CONTACT");
+                    setActive("/contact");
                 }}
             >
                 CONTACT
             </Menu.Item>
-            <Divider hidden />
-            <Divider hidden />
-            <RedirectLinks />
-            <Divider hidden />
-            <Divider hidden />
-            <Divider hidden />
-            <Divider hidden />
-            <Divider hidden />
-            <Divider hidden />
-            <Menu.Item className='deployed-with-group'>
-                <a href="https://www.heroku.com/what" target="_blank" rel="noopener noreferrer">
-                    <Header as='h4' inverted content="This site is deployed with" />
-                    <InlineIcon icon={herokuIcon} height={32} vAlign='middle' hAlign='center' />
-                </a>
+            <Menu.Item>
+                <RedirectLinks />
             </Menu.Item>
         </Menu>
     );
 }
-
 
 export default SideBar;

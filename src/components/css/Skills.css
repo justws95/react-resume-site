@@ -1,4 +1,31 @@
 .ui.grid.skills-page-content-window {
     padding: 25px;
-    font-size: 21px;
+    font-size: 18px;
+}
+
+.ui.header.skills-page-sub-header {
+    color: #313332;
+}
+
+.skills-masonry-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+}
+   
+.skills-masonry-grid-column {
+    padding: 20px;
+    background-clip: padding-box;
+}
+
+.skills-masonry-grid-column > div { 
+    background: grey;
+    margin-bottom: 30px;
+}
+
+.ui.card.skills-card-extra {
+    font-size: 14px !important;
 }
