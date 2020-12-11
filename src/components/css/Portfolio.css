@@ -1,4 +1,4 @@
-.my-masonry-grid {
+.portfolio-masonry-grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7,13 +7,12 @@
   width: auto;
 }
 
-.my-masonry-grid_column {
+.portfolio-masonry-grid-column {
   padding: 20px;
   background-clip: padding-box;
 }
   
-
-.my-masonry-grid_column > div { 
+.portfolio-masonry-grid-column > div { 
   background: grey;
   margin-bottom: 30px;
 }

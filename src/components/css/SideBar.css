@@ -2,7 +2,11 @@
     text-align: center;
 }
 
-.header-group h4 {
+.header-group h1 {
+    font-size: 34px;
+}
+
+.header-group h3 {
     margin-top: 0%;
     color: rgb(13, 219, 164);
 }
@@ -12,13 +16,4 @@
     background-color: #313332;
     margin-left: 5%;
     width: 90%;
-}
-
-.deployed-with-group {
-    position: absolute;
-    bottom: 5%;
-    display: flex;
-    text-align: center;
-    align-content: center;
-    justify-content: center;
 }

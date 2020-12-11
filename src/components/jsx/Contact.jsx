@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import EmailValidator from 'email-validator';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { 
     Form,
     Message,
@@ -8,7 +9,8 @@ import {
     Divider, 
     Confirm, 
     Header,
-    Transition
+    Transition,
+    Grid
 } from 'semantic-ui-react';
 
 import PageHeader from './PageHeader';
@@ -37,9 +39,8 @@ async function sendEmail(data) {
 
 
 // TODO: Fix the submit button 'shake' when input is invalid.
-function Contact() {
+const Contact = () => {
     /* Hooks for form input and validation */
-    
     const [nameInput, setName] = useState("");
     const [emailInput, setEmail] = useState("");
     const [phoneInput, setPhone] = useState("");
@@ -64,6 +65,12 @@ function Contact() {
     const [pendingEmail, setPending] = useState(false);
     const [triggerSubmitErrorShake, setShake] = useState(false);
 
+  
+    let testMessageReady = () => {
+        return (
+            validName && validEmail && validPhone && validMessage && validSubject
+        );
+    }
 
     
     return (
@@ -217,34 +224,50 @@ function Contact() {
                             setPending(false);
                         }}
                     />
-                    <Transition
-                        animation='shake'
-                        duration={500}
-                        visible={true}
-                    >
-                        <Button 
-                            content={contactFormMessageSent ? 'Message Sent!' : 'Send Message'}
-                            fluid
-                            className='contact-page-button'
-                            size='big'
-                            loading={pendingEmail}
-                            onClick={() => {
-                                if (!(validEmail) || !(validPhone) || !(validName)) {
-                                    setShake(true);
-                                    setShake(false);
-                                }
-                                else {
-                                    displayConfirmMessage(true);
-                                }
-                            }}
-                        />
-                    </Transition>
+                    <Grid centered stackable>
+                        <Grid.Row verticalAlign='middle' columns={3} centered>
+                            <Grid.Column width={4}>
+                                <ReCAPTCHA
+                                    sitekey="6LeUb_4ZAAAAAKPAWCS1uUZx_1Vaf3n3N3SIxhj2"
+                                    onChange={val => {
+                                        console.log("Captcha value: ", val);
+                                    }}
+                                />
+                            </Grid.Column>
+                            <Grid.Column width={4}>
+                                <Divider hidden />
+                            </Grid.Column>
+                            <Grid.Column width={8}>
+                                <Transition
+                                    animation='shake'
+                                    duration={500}
+                                    visible={true}
+                                >
+                                    <Button 
+                                        fluid
+                                        content={contactFormMessageSent ? 'Message Sent!' : 'Send Message'}
+                                        className='contact-page-button'
+                                        size='big'
+                                        loading={pendingEmail}
+                                        onClick={() => {
+                                            if (!(testMessageReady())) {
+                                                setShake(true);
+                                                setShake(false);
+                                            }
+                                            else {
+                                                displayConfirmMessage(true);
+                                            }
+                                        }}
+                                    />
+                                </Transition>
+                            </Grid.Column>
+                        </Grid.Row>
+                    </Grid>
                 </Form>
                 <Divider hidden />
             </Container>
         </React.Fragment>
     );
 }
-
 
 export default Contact;

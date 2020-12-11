@@ -6,7 +6,8 @@ import PageHeader from './PageHeader';
 import '../css/WebResume.css';
 
 
-function WebResume(){
+const WebResume = () => {
+
     return (
         <React.Fragment>
             <PageHeader title="Resume" />
@@ -42,8 +43,12 @@ function WebResume(){
                         </Header.Subheader>
                     </Header>
                     <p>
-                        Supported digital transformation efforts within North American manufacturing operations as a member
-                        of the Manufacturing Strategy & Planning Office.
+                        Supported the development and management of regional strategy for digital transformation within 
+                        U.S. and Mexican manufacturing operations. Implemented and supported the adoption of key 
+                        initiatives with a focus on technologies pertaining to data analysis and artificial intelligence. 
+                        Examples of projects I worked on include developing dashboards in Tableau to tie together disparate 
+                        data sources and developing a computer vision model using the TensorFlow Object Detection API to 
+                        demonstrate AI powered object detection. 
                     </p>
                 </Container>
                 <Divider hidden />
@@ -56,12 +61,12 @@ function WebResume(){
                     <Header as='h3'>
                         <Header.Content content={"Bachelor of Science in Computer Science"} />
                         <Header.Subheader>
-                            <b>University of Tennessee, Knoxville</b> | <i>August, 2016 - May, 2021</i>
+                            <b>University of Tennessee, Knoxville</b> | <i>Graduating May, 2021</i>
                         </Header.Subheader>
                     </Header>
                     <p>
-                        Pursuing a Bachelors degree in the field of Computer Science with concentrations in Artificial Intelligence,
-                        Theory, and Scientific Computing. I will be graduating this coming May.
+                        Pursuing a Bachelors degree in the field of Computer Science with concentrations in Artificial 
+                        Intelligence, Theory, and Scientific Computing. I will be graduating this coming May.
                     </p>
                 </Container>
                 <Divider hidden />
@@ -69,12 +74,12 @@ function WebResume(){
                     <Header as='h3'>
                         <Header.Content content={"Associate of Science"} />
                         <Header.Subheader>
-                            <b>Pellissippi State Community College</b> | <i>August, 2015 - May, 2016</i>
+                            <b>Pellissippi State Community College</b> | <i>Graduated December, 2016</i>
                         </Header.Subheader>
                     </Header>
                     <p>
-                        Completed my Associate of Sciences degree in General Studies with concentrations and elective choices taken 
-                        in plan to transfer for my Bachelors in Computer Science.
+                        Completed my Associate of Sciences degree in General Studies with concentrations and elective
+                        choices taken in plan to transfer for my Bachelors Degree in Computer Science.
                     </p>
                 </Container>
                 <Divider hidden />
@@ -91,10 +96,12 @@ function WebResume(){
                         </Header.Subheader>
                     </Header>
                     <p>
-                        As a part of my senior design capstone project, we were given the option to work on a project of our choosing.
-                        I came up of the idea of creating a Visual Studio Code extension to automate the process of creating build 
-                        system files, such as Makefiles, for C++ projects. We are hoping to publish our extension under the MIT license
-                        for other developers to extend or modify and give back to the community that has given so much to us!
+                        As a part of my senior design capstone project, we were given the option to work on a project 
+                        of our choosing. I came up of the idea of creating a Visual Studio Code extension to help 
+                        automate the process of creating build system files, such as Makefiles, for C++ projects as 
+                        well as provide a Graphical user Interface to help visualize code dependancies. We will be 
+                        publishing our extension under the MIT license for other developers to extend or modify and give
+                        back to the community that has given so much to us!
                     </p>
                 </Container>
             </div>
@@ -103,6 +110,5 @@ function WebResume(){
         </React.Fragment>
     );
 }
-
 
 export default WebResume;

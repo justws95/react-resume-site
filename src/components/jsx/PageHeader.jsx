@@ -3,7 +3,8 @@ import { Header, Divider } from 'semantic-ui-react';
 
 import '../css/PageHeader.css';
 
-function PageHeader(props) {
+
+const PageHeader = (props) => {
     return (
         <React.Fragment>
             <Header 
@@ -16,6 +17,5 @@ function PageHeader(props) {
         </React.Fragment>
     );
 }
-
 
 export default PageHeader;

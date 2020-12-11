@@ -7,7 +7,7 @@ import '../css/ErrorPage.css';
 import youAreLost from '../../assets/images/youre-lost.png';
 
 
-function ErrorPage() {
+const ErrorPage = () => {
     return (
         <Grid 
             as={Container} 
@@ -38,6 +38,5 @@ function ErrorPage() {
         </Grid>
     );
 }
-
 
 export default ErrorPage;

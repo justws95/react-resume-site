@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Masonry from 'react-masonry-css';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import * as shuffle from 'fisher-yates';
-import { Image, Grid, Card, Divider } from 'semantic-ui-react';
- 
+import { 
+    Image, 
+    Grid, 
+    Card,
+    Header, 
+    Icon,
+    Divider
+} from 'semantic-ui-react';
+
 import PageHeader from './PageHeader';
 
 import '../css/Skills.css';
@@ -22,13 +31,17 @@ import semanticIcon from '../../assets/icons/semantic-ui.png';
 import sklearnIcon from '../../assets/icons/sklearn.png';
 
 
-function Skills() {
+const Skills = () => {
+    const [cards, setCards] = useState([]);
+    const [numFetchedCards, setNumFetched] = useState(0);
+    const [moreItems, setMoreItems] = useState(true);
+
     let rawSkills = [
         {
             title: "Boost C++",
             icon: boostCppIcon,
             alt: "Boost C++ Icon",
-            yearsExperiance: " < 1",
+            yearsExperiance: " less than 1",
             onDisplay: false,
             meta: "Library",
             link: "https://www.boost.org/"
@@ -55,7 +68,7 @@ function Skills() {
             title: "Docker",
             icon: dockerIcon,
             alt: "Docker Icon",
-            yearsExperiance: " < 1",
+            yearsExperiance: " less than 1",
             onDisplay: false,
             meta: "DevOps Tool",
             link: "https://www.docker.com/"
@@ -66,7 +79,7 @@ function Skills() {
             alt: "Git Icon",
             yearsExperiance: 2,
             onDisplay: false,
-            meta: "DevOps Tool",
+            meta: "Version Control",
             link: "https://git-scm.com/"
         },
         {
@@ -118,7 +131,7 @@ function Skills() {
             title: "React",
             icon: reactIcon,
             alt: "React Icon",
-            yearsExperiance: " < 1",
+            yearsExperiance: " less than 1",
             onDisplay: false,
             meta: "Framework",
             link: "https://reactjs.org/"
@@ -127,7 +140,7 @@ function Skills() {
             title: "Semantic UI",
             icon: semanticIcon,
             alt: "Semantic UI Icon",
-            yearsExperiance: " < 1",
+            yearsExperiance: " less than 1",
             onDisplay: false,
             meta: "Library",
             link: "https://semantic-ui.com/"
@@ -143,72 +156,172 @@ function Skills() {
         }
     ];
 
+    // Shuffle the skills randomly
     var mySkills = shuffle(rawSkills, Math.random);
 
-    // Helper function to return a card dynamically
-    const fetchCard = function(mySkills) {
+
+    // Dynamically build a Card object
+    const cardFactory = (mySkills) => {
         let content = mySkills.pop();
         mySkills.unshift(content);
 
+        //console.log("In the card factory");
+
         return (
-            <Card>
+            <Card fluid>
                 <Image 
                     as='a'
+                    className='skills-page-tech-icon'
                     src={content.icon} 
                     alt={content.alt}
                     href={content.link}
                     target='_blank'
                     bordered
                     centered
-                    wrapped 
+                    wrapped
                     ui={false}
                 />
+                <Card.Content>
+                    <Card.Header>{content.title}</Card.Header>
+                    <Card.Meta>{content.meta}</Card.Meta>
+                </Card.Content>
+                <Card.Content extra className='skills-card-extra'>
+                    <Icon name='calendar alternate outline' />
+                    Years experiance: {content.yearsExperiance.toString()}
+                </Card.Content>
             </Card>
         );
     }
 
+    // Refresh function to pull a batch of new cards
+    const getMoreCards = (mySkills) => {
+        //console.log("In the getMoreCards function");
+        let remainingSkills = (mySkills.length - numFetchedCards)
+        let numToFetch = remainingSkills >= 4 ? 4 : remainingSkills;
+
+        let newCards = [];
+
+        while(newCards.length < numToFetch) {
+            cards.push(cardFactory(mySkills));
+        }
+
+        setCards(cards + newCards);
+
+        if (cards.length === mySkills.length) {
+            setMoreItems(false);
+        }
+    }
+
+    // Breakpoints for masonry
+    const breakpointColumnsObj = {
+        default: 5,
+        1700: 4,
+        1300: 3,
+        900: 2,
+        400: 1
+    };
+
+    
     return (
-        <React.Fragment>
-            <PageHeader title="My Skills" />
-            <Grid stretched columns={2} className='skills-page-content-window'>
-                <Grid.Row stretched>
-                    <Grid.Column stretched width={7} verticalAlign='top' textAlign='justified'>
+       <React.Fragment>
+            <PageHeader title="Skillset" />
+            <Grid centered stackable className='skills-page-content-window'>
+               <Grid.Row centered columns={2}>
+                    <Grid.Column width={8}>
+                        <Header as='h2' className='skills-page-sub-header'>
+                            <Icon name='terminal' color='black' />
+                            <Header.Content>Application Development</Header.Content>
+                        </Header>
                         <p>
-                            Over the years, I have tried to expose myself to various  sides of the 
-                            software development in order to better learn what I like to work on and to 
-                            ensure I would be able to hit the ground running in any environment.  I am 
-                            proficient in C++ and Python and have a strong working knowledge of the typical 
-                            web stack of HTML5, CSS, and JavaScript. I am knowledgeable in using many of the 
-                            tools and technologies that are essential for modern data science with Python 
-                            such as Jupyter Notebooks, Scikit Learn, and Keras. I also have started working 
-                            more with React JS and Node JS for web development, having used them to build this 
-                            website. The gallery to the right highlights some of the many different tools, 
-                            technologies, languages, libraries, and frameworks I am familiar working with. 
-                        </p>   
+                            Skilled in programming in C and C++. Experience creating desktop and server
+                            applications with Node.js and Electron. Knowledgeable of Unix internals and key 
+                            operating system concepts.
+                        </p>
                     </Grid.Column>
-                    <Grid.Column width={9}>
-                    <Card.Group itemsPerRow={4}>
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                        <Card raised image={fetchCard(mySkills)} />
-                    </Card.Group>
+                    <Grid.Column width={8}>
+                        <Header as='h2' className='skills-page-sub-header'>
+                            <Icon name='cloud' color='black' />
+                            <Header.Content>DevOps</Header.Content>
+                        </Header>
+                        <p>
+                            Strong experience scripting and automating with Python. Well versed in the software development
+                            life cycle using pertinent tools like Git. Experience with cloud tools like Heroku and Google 
+                            Cloud Platform.
+                        </p>
                     </Grid.Column>
                 </Grid.Row>
+                <Grid.Row centered columns={2}>
+                    <Grid.Column width={8}>
+                        <Header as='h2' className='skills-page-sub-header'>
+                            <Icon name='desktop' color='black' />
+                            <Header.Content>Web Development</Header.Content>
+                        </Header>
+                        <p>
+                            Capable working full-stack with experience in HTML5, CSS3, JavaScript and TypeScript.
+                            Knowledgeable in creating modern progressive web applications with tools like ReactJS,
+                            Bootstrap, Semantic UI, and Node.js.
+                        </p>
+                    </Grid.Column>
+                    <Grid.Column width={8}>
+                        <Header as='h2' className='skills-page-sub-header'>
+                            <Icon name='lab' color='black' />
+                            <Header.Content>Data Science</Header.Content>
+                        </Header>
+                        <p>
+                            Strong background in Python and experience working with Scikit-learn, Keras,
+                            Jupyter Notebooks, and other tools vital to the data science pipeline.      
+                        </p>
+                    </Grid.Column>
+                </Grid.Row>
+                <Grid.Row>
+                    <Divider hidden />
+                </Grid.Row>
+                <Grid.Row textAlign='justified'>
+                    {/*
+                    <InfiniteScroll
+                        dataLength={cards.length}
+                        next={getMoreCards}
+                        hasMore={moreItems}
+                        loader={
+                            <p style={{ textAlign: 'center' }}>
+                                <b>Loading...</b>
+                            </p>
+                        }
+                        endMessage={
+                            <p style={{ textAlign: 'center' }}>
+                                <b>No more items to load</b>
+                            </p>
+                        }
+                    >
+                        <Masonry
+                            breakpointCols={breakpointColumnsObj}
+                            className="skills-masonry-grid"
+                            columnClassName="skills-masonry-grid-column"
+                        >
+                            {cards}
+                        </Masonry>
+                    </InfiniteScroll>
+                    */}
+                    <Masonry
+                        breakpointCols={breakpointColumnsObj}
+                        className="skills-masonry-grid"
+                        columnClassName="skills-masonry-grid-column"
+                    >
+                        {cardFactory(mySkills)}
+                        {cardFactory(mySkills)}
+                        {cardFactory(mySkills)}
+                        {cardFactory(mySkills)}
+                        {cardFactory(mySkills)}
+                        {cardFactory(mySkills)}
+                        {cardFactory(mySkills)}
+                        {cardFactory(mySkills)}
+                        {cardFactory(mySkills)}
+                        {cardFactory(mySkills)}
+                    </Masonry>
+                </Grid.Row>
             </Grid>
-            <Divider hidden />
-            <Divider hidden />
-        </React.Fragment>
-    );
+       </React.Fragment>
+   )
 }
-
 
 export default Skills;

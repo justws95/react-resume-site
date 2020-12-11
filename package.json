@@ -15,6 +15,9 @@
     "pure-react-carousel": "^1.27.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-github-btn": "^1.2.0",
+    "react-google-recaptcha": "^2.1.0",
+    "react-infinite-scroll-component": "^5.1.0",
     "react-masonry-css": "^1.0.14",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
@@ -41,9 +44,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@iconify-icons/logos": "^1.1.0",
-    "@iconify/react": "^1.1.3"
   }
 }

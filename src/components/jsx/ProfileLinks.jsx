@@ -3,7 +3,8 @@ import React from 'react';
 import '../css/ProfileLinks.css';
 
 
-function ProfileLinks() {
+const ProfileLinks = () => {
+
     return (
         <div class="profile-links">
             <a href="https://github.com/justws95" target="_blank" rel="noopener noreferrer">
@@ -23,6 +24,5 @@ function ProfileLinks() {
         </div>  
     );
 }
-
 
 export default ProfileLinks;
