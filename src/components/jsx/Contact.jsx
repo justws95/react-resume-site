@@ -39,7 +39,7 @@ async function sendEmail(data) {
 
 
 // TODO: Fix the submit button 'shake' when input is invalid.
-const Contact = () => {
+const Contact = (props) => {
     /* Hooks for form input and validation */
     const [nameInput, setName] = useState("");
     const [emailInput, setEmail] = useState("");
@@ -72,7 +72,6 @@ const Contact = () => {
         );
     }
 
-    
     return (
         <React.Fragment>
             <PageHeader title="Contact" />
@@ -227,16 +226,21 @@ const Contact = () => {
                     <Grid centered stackable>
                         <Grid.Row verticalAlign='middle' columns={3} centered>
                             <Grid.Column width={4}>
-                                <ReCAPTCHA
-                                    sitekey="6LeUb_4ZAAAAAKPAWCS1uUZx_1Vaf3n3N3SIxhj2"
-                                    onChange={val => {
-                                        console.log("Captcha value: ", val);
-                                    }}
-                                />
+                                <div>
+                                    <ReCAPTCHA
+                                        size={props.isMobile? 'compact': 'normal'}
+                                        sitekey="6LeUb_4ZAAAAAKPAWCS1uUZx_1Vaf3n3N3SIxhj2"
+                                        onChange={val => {
+                                            console.log("Captcha value: ", val);
+                                        }}
+                                    />
+                                </div>
                             </Grid.Column>
-                            <Grid.Column width={4}>
-                                <Divider hidden />
-                            </Grid.Column>
+                            {(!(props.isMobile)) &&
+                                <Grid.Column width={4}>
+                                    <Divider hidden />
+                                </Grid.Column>
+                            }   
                             <Grid.Column width={8}>
                                 <Transition
                                     animation='shake'

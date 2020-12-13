@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createRef } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Grid, Transition, Divider, Sticky, Ref } from 'semantic-ui-react';
+import { Grid, Transition, Divider, Sticky } from 'semantic-ui-react';
 
 import SideBar from './SideBar';
 import LandingPage from './LandingPage';
@@ -30,11 +30,9 @@ const NegativeSpace = (props) => {
 
 const App = () => {
     const [viewportWidth, setWidth] = useState(window.innerWidth);
-    const [vieportHeight, setHeight] = useState(window.innerHeight);
 
     const updateDimensions = () => {
         setWidth(window.innerWidth);
-        setHeight(window.innerHeight);
     }
 
     useEffect(() => {
@@ -49,12 +47,12 @@ const App = () => {
     let refContext = createRef();
 
     return (
-        <Ref innerRef={refContext}>
+        <div ref={refContext}>
             <Router>
                 {isMobile() &&
                     <Sticky context={refContext}>
                         <HamburgerMenu />
-                    </Sticky>
+                    </Sticky>  
                 }
                 <Grid stretched>
                     <Grid.Row stretched fluid>
@@ -88,7 +86,9 @@ const App = () => {
                                     <Route path="/skillset" component={Skills} />
                                     <Route path="/portfolio" component={Portfolio} />
                                     <Route path="/about-me" component={AboutMe} />
-                                    <Route path="/contact" component={Contact} />
+                                    <Route path="/contact">
+                                        <Contact isMobile={isMobile()} />
+                                    </Route>
                                     <Route component={ErrorPage} />
                                 </Switch>
                             </div>
@@ -99,7 +99,7 @@ const App = () => {
                     </Grid.Row>
                 </Grid>
             </Router>
-        </Ref>
+        </div>
     );
 }
 

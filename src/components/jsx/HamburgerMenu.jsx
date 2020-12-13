@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, Dropdown, Header } from 'semantic-ui-react';
 
+import '../css/HamburgerMenu.css';
  
 const HamburgerMenu = () => {
     const [activeItem, setActive] = useState(useLocation().pathname);
@@ -72,7 +73,10 @@ const HamburgerMenu = () => {
                     </Dropdown.Menu>
                 </Dropdown>
                 <Menu.Item>
-                    <Header inverted content="Justin Sumner" />
+                    <Header inverted className='hamburger-menu-title-main' content="Justin Sumner" />
+                </Menu.Item>
+                <Menu.Item>
+                    <Header className='hamburger-menu-title-colored' content="Software Developer" />
                 </Menu.Item>
             </Menu>
         </React.Fragment>
