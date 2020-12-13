@@ -73,10 +73,10 @@ const HamburgerMenu = () => {
                     </Dropdown.Menu>
                 </Dropdown>
                 <Menu.Item>
-                    <Header inverted className='hamburger-menu-title-main' content="Justin Sumner" />
+                    <Header as="h3" inverted className='hamburger-menu-title-main' content="Justin Sumner" />
                 </Menu.Item>
                 <Menu.Item>
-                    <Header className='hamburger-menu-title-colored' content="Software Developer" />
+                    <Header as="h3" className='hamburger-menu-title-colored' content="Software Developer" />
                 </Menu.Item>
             </Menu>
         </React.Fragment>
