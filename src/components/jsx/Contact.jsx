@@ -9,8 +9,7 @@ import {
     Divider, 
     Confirm, 
     Header,
-    Transition,
-    Grid
+    Transition
 } from 'semantic-ui-react';
 
 import PageHeader from './PageHeader';
@@ -223,50 +222,37 @@ const Contact = (props) => {
                             setPending(false);
                         }}
                     />
-                    <Grid centered stackable>
-                        <Grid.Row verticalAlign='middle' columns={3} centered>
-                            <Grid.Column width={4}>
-                                <div>
-                                    <ReCAPTCHA
-                                        size={props.isMobile? 'compact': 'normal'}
-                                        sitekey="6LeUb_4ZAAAAAKPAWCS1uUZx_1Vaf3n3N3SIxhj2"
-                                        onChange={val => {
-                                            console.log("Captcha value: ", val);
-                                        }}
-                                    />
-                                </div>
-                            </Grid.Column>
-                            {(!(props.isMobile)) &&
-                                <Grid.Column width={4}>
-                                    <Divider hidden />
-                                </Grid.Column>
-                            }   
-                            <Grid.Column width={8}>
-                                <Transition
-                                    animation='shake'
-                                    duration={500}
-                                    visible={true}
-                                >
-                                    <Button 
-                                        fluid
-                                        content={contactFormMessageSent ? 'Message Sent!' : 'Send Message'}
-                                        className='contact-page-button'
-                                        size='big'
-                                        loading={pendingEmail}
-                                        onClick={() => {
-                                            if (!(testMessageReady())) {
-                                                setShake(true);
-                                                setShake(false);
-                                            }
-                                            else {
-                                                displayConfirmMessage(true);
-                                            }
-                                        }}
-                                    />
-                                </Transition>
-                            </Grid.Column>
-                        </Grid.Row>
-                    </Grid>
+                    <Transition
+                        animation='shake'
+                        duration={500}
+                        visible={true}
+                    >
+                        <Button 
+                            fluid
+                            content={contactFormMessageSent ? 'Message Sent!' : 'Send Message'}
+                            className='contact-page-button'
+                            size='big'
+                            loading={pendingEmail}
+                            onClick={() => {
+                                if (!(testMessageReady())) {
+                                    setShake(true);
+                                    setShake(false);
+                                }
+                                else {
+                                    displayConfirmMessage(true);
+                                }
+                            }}
+                        />
+                    </Transition>
+                    {/*  
+                    <ReCAPTCHA
+                        size='invisible'
+                        sitekey="6LfziwUaAAAAAJiR11ufQuvMEZm_dMMoKyHECwG6"
+                        onChange={val => {
+                            console.log("Captcha value: ", val);
+                        }}
+                    />
+                    */}
                 </Form>
                 <Divider hidden />
             </Container>

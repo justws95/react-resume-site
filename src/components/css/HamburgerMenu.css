@@ -1,7 +1,9 @@
 .ui.header.hamburger-menu-title-colored {
+    font-size: 16px;
     color: #1dbf94;
 }
 
-.ui.header.hamburger-menu-title-main{
+.ui.header.hamburger-menu-title-main {
+    font-size: 16px;
     color: #ece9e9;
 }
