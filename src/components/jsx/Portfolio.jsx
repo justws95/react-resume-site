@@ -1,7 +1,7 @@
 import React from 'react';
 import Masonry from 'react-masonry-css';
 import GitHubButton from 'react-github-btn';
-import { Divider, Card, Image, Icon } from 'semantic-ui-react';
+import { Divider, Card, Image } from 'semantic-ui-react';
 
 import PageHeader from './PageHeader';
 
@@ -71,10 +71,7 @@ const Portfolio = () => {
                         </Card.Description>
                     </Card.Content>
                     <Card.Content extra>
-                        <a href="https://github.com/justws95/" target="_blank" rel="noopener noreferrer">
-                            <Icon name='linkify' />
-                            https://github.com/justws95/
-                        </a>
+                        <GitHubButton href="https://github.com/justws95/">Check out my profile!</GitHubButton>
                     </Card.Content>
                 </Card>
             </Masonry>
