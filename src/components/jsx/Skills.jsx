@@ -41,7 +41,7 @@ const Skills = () => {
             title: "Boost C++",
             icon: boostCppIcon,
             alt: "Boost C++ Icon",
-            yearsExperiance: " less than 1",
+            yearsExperience: " Less than 1",
             onDisplay: false,
             meta: "Library",
             link: "https://www.boost.org/"
@@ -50,7 +50,7 @@ const Skills = () => {
             title: "Bootstrap CSS",
             icon: bootstrapIcon,
             alt: "Bootstrap Icon",
-            yearsExperiance: 1,
+            yearsExperience: 1,
             onDisplay: false,
             meta: "Library",
             link: "https://getbootstrap.com/"
@@ -59,7 +59,7 @@ const Skills = () => {
             title: "C++",
             icon: cppIcon,
             alt: "C++ Icon",
-            yearsExperiance: 5,
+            yearsExperience: 5,
             onDisplay: false,
             meta: "Programming Language",
             link: "https://en.wikipedia.org/wiki/C%2B%2B"
@@ -68,7 +68,7 @@ const Skills = () => {
             title: "Docker",
             icon: dockerIcon,
             alt: "Docker Icon",
-            yearsExperiance: " less than 1",
+            yearsExperience: " Less than 1",
             onDisplay: false,
             meta: "DevOps Tool",
             link: "https://www.docker.com/"
@@ -77,7 +77,7 @@ const Skills = () => {
             title: "Git",
             icon: gitIcon,
             alt: "Git Icon",
-            yearsExperiance: 2,
+            yearsExperience: 2,
             onDisplay: false,
             meta: "Version Control",
             link: "https://git-scm.com/"
@@ -86,7 +86,7 @@ const Skills = () => {
             title: "Keras",
             icon: kerasIcon,
             alt: "Keras Icon",
-            yearsExperiance: 1,
+            yearsExperience: 1,
             onDisplay: false,
             meta: "Library",
             link: "https://keras.io/"
@@ -95,7 +95,7 @@ const Skills = () => {
             title: "Node JS",
             icon: nodeIcon,
             alt: "Node.js Icon",
-            yearsExperiance: 1,
+            yearsExperience: 1,
             onDisplay: false,
             meta: "Runtime Enviroment",
             link: "https://nodejs.org/en/"
@@ -104,7 +104,7 @@ const Skills = () => {
             title: "Numpy",
             icon: numpyIcon,
             alt: "Numpy Icon",
-            yearsExperiance: 2,
+            yearsExperience: 2,
             onDisplay: false,
             meta: "Library",
             link: "https://numpy.org/"
@@ -113,7 +113,7 @@ const Skills = () => {
             title: "Pandas",
             icon: pandasIcon,
             alt: "Pandas Icon",
-            yearsExperiance: 3,
+            yearsExperience: 3,
             onDisplay: false,
             meta: "Library",
             link: "https://pandas.pydata.org/"
@@ -122,7 +122,7 @@ const Skills = () => {
             title: "Python",
             icon: pythonIcon,
             alt: "Python Icon",
-            yearsExperiance: 3,
+            yearsExperience: 3,
             onDisplay: false,
             meta: "Programming Language",
             link: "https://www.python.org/"
@@ -131,7 +131,7 @@ const Skills = () => {
             title: "React",
             icon: reactIcon,
             alt: "React Icon",
-            yearsExperiance: " less than 1",
+            yearsExperience: " Less than 1",
             onDisplay: false,
             meta: "Framework",
             link: "https://reactjs.org/"
@@ -140,7 +140,7 @@ const Skills = () => {
             title: "Semantic UI",
             icon: semanticIcon,
             alt: "Semantic UI Icon",
-            yearsExperiance: " less than 1",
+            yearsExperience: " Less than 1",
             onDisplay: false,
             meta: "Library",
             link: "https://semantic-ui.com/"
@@ -149,7 +149,7 @@ const Skills = () => {
             title: "Scikit-learn",
             icon: sklearnIcon,
             alt: "Scikit-learn Icon",
-            yearsExperiance: 2,
+            yearsExperience: 2,
             onDisplay: false,
             meta: "Library",
             link: "https://scikit-learn.org/stable/"
@@ -187,7 +187,7 @@ const Skills = () => {
                 </Card.Content>
                 <Card.Content extra className='skills-card-extra'>
                     <Icon name='calendar alternate outline' />
-                    Years experiance: {content.yearsExperiance.toString()}
+                    Years of experience: {content.yearsExperience.toString()}
                 </Card.Content>
             </Card>
         );
