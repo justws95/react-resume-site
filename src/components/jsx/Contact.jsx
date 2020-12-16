@@ -9,7 +9,8 @@ import {
     Divider, 
     Confirm, 
     Header,
-    Transition
+    Transition,
+    Icon
 } from 'semantic-ui-react';
 
 import PageHeader from './PageHeader';
@@ -63,6 +64,7 @@ const Contact = (props) => {
     const [confirmMessageOpen, displayConfirmMessage] = useState(false);
     const [pendingEmail, setPending] = useState(false);
     const [triggerSubmitErrorShake, setShake] = useState(false);
+    const [messageSentSuccess, setMessageSent] = useState(false);
 
   
     let testMessageReady = () => {
@@ -229,6 +231,7 @@ const Contact = (props) => {
                     >
                         <Button 
                             fluid
+                            animated={messageSentSuccess ? false : 'fade'}
                             content={contactFormMessageSent ? 'Message Sent!' : 'Send Message'}
                             className='contact-page-button'
                             size='big'
@@ -240,9 +243,19 @@ const Contact = (props) => {
                                 }
                                 else {
                                     displayConfirmMessage(true);
+                                    setMessageSent(true);
                                 }
                             }}
-                        />
+                        >
+                            <Button.Content visible>
+                                {contactFormMessageSent ? 'MESSAGE SENT!' : 'SEND MESSAGE'}
+                            </Button.Content>
+                            {(!(messageSentSuccess)) &&
+                                <Button.Content hidden>
+                                    <Icon name='envelope outline' />&nbsp;&nbsp;&nbsp;&nbsp;CLICK TO SEND MESSAGE
+                                </Button.Content>
+                            }
+                        </Button>
                     </Transition>
                     {/*  
                     <ReCAPTCHA
