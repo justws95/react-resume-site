@@ -30,7 +30,7 @@ const WebResume = () => {
                         developing the next generation of radiation detectors that will be used in medical imaging 
                         systems. In this role I have worked on various, diverse projects in order to support the goals 
                         of R&D. Some examples of projects I have worked on included researching and prototyping computer
-                        vision techniques for manufacturing processes, the development of a web application to control
+                        vision techniques for manufacturing processes, the development of a web application to control a
                         new hardware prototype remotely, and writing embedded code to test hardware prototypes.
                     </p>
                 </Container>
