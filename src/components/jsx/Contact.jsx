@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import EmailValidator from 'email-validator';
-import ReCAPTCHA from 'react-google-recaptcha';
+//import ReCAPTCHA from 'react-google-recaptcha';
 import { 
     Form,
     Message,
@@ -63,7 +63,7 @@ const Contact = (props) => {
     const [contactFormMessageSent, setEmailSentStatus] = useState(false);
     const [confirmMessageOpen, displayConfirmMessage] = useState(false);
     const [pendingEmail, setPending] = useState(false);
-    const [triggerSubmitErrorShake, setShake] = useState(false);
+    //const [triggerSubmitErrorShake, setShake] = useState(false);
     const [messageSentSuccess, setMessageSent] = useState(false);
 
   
@@ -214,6 +214,7 @@ const Contact = (props) => {
                             };
 
                             displayConfirmMessage(false);
+                            setMessageSent(true);
                             setPending(true);
 
                             let msgStatus = await sendEmail(messageData);
@@ -231,6 +232,7 @@ const Contact = (props) => {
                     >
                         <Button 
                             fluid
+                            disabled={messageSentSuccess}
                             animated={messageSentSuccess ? false : 'fade'}
                             content={contactFormMessageSent ? 'Message Sent!' : 'Send Message'}
                             className='contact-page-button'
@@ -238,12 +240,11 @@ const Contact = (props) => {
                             loading={pendingEmail}
                             onClick={() => {
                                 if (!(testMessageReady())) {
-                                    setShake(true);
-                                    setShake(false);
+                                    //setShake(true);
+                                    //setShake(false);
                                 }
                                 else {
                                     displayConfirmMessage(true);
-                                    setMessageSent(true);
                                 }
                             }}
                         >

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Masonry from 'react-masonry-css';
-import InfiniteScroll from 'react-infinite-scroll-component';
+//import InfiniteScroll from 'react-infinite-scroll-component';
 import * as shuffle from 'fisher-yates';
 import { 
     Image, 
