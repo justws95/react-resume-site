@@ -82,6 +82,7 @@ const WebResume = () => {
                         choices taken in plan to transfer for my Bachelors Degree in Computer Science.
                     </p>
                 </Container>
+                {/*
                 <Divider hidden />
                 <Header as='h2' className='resume-page-sub-header'>
                     <Icon name='osi' color='black' />
@@ -104,6 +105,10 @@ const WebResume = () => {
                         back to the community that has given so much to us!
                     </p>
                 </Container>
+            </div>
+            <Divider hidden />
+            <Divider hidden />
+            */}
             </div>
             <Divider hidden />
             <Divider hidden />
