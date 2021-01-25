@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Masonry from 'react-masonry-css';
-import InfiniteScroll from 'react-infinite-scroll-component';
+//import InfiniteScroll from 'react-infinite-scroll-component';
 import * as shuffle from 'fisher-yates';
 import { 
     Image, 
@@ -20,6 +20,7 @@ import boostCppIcon from '../../assets/icons/boost-logo.svg';
 import bootstrapIcon from '../../assets/icons/bootstrap.png';
 import cppIcon from '../../assets/icons/c++.png';
 import dockerIcon from '../../assets/icons/docker.png';
+import electronIcon from '../../assets/icons/electron.jpg';
 import gitIcon from '../../assets/icons/git.png';
 import kerasIcon from '../../assets/icons/keras.png';
 import nodeIcon from '../../assets/icons/nodejs.png';
@@ -72,6 +73,15 @@ const Skills = () => {
             onDisplay: false,
             meta: "DevOps Tool",
             link: "https://www.docker.com/"
+        },
+        {
+            title: "Electron",
+            icon: electronIcon,
+            alt: "Electron Icon",
+            yearsExperience: " Less than 1",
+            onDisplay: false,
+            meta: "Framework",
+            link: "https://www.electronjs.org/"
         },
         {
             title: "Git",
