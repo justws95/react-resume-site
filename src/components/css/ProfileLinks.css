@@ -9,10 +9,11 @@
 .profile-links i {
     padding-right: 15px;
     padding-left: 15px;
-    font-size: 35px;
+    font-size: 30px;
     color: #9a9b9c;
 }
 
-.profile-links i:hover{
+.profile-links i:hover {
+    font-size: 35px;
     color: #ffffff;
 }
