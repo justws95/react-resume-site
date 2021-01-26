@@ -1,6 +1,12 @@
 import React, { useState, useEffect, createRef } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { 
+    BrowserRouter as Router, 
+    Route, 
+    Switch, 
+    useLocation 
+} from 'react-router-dom';
 import { Grid, Transition, Divider, Sticky } from 'semantic-ui-react';
+import rg4js from 'raygun4js';
 
 import SideBar from './SideBar';
 import LandingPage from './LandingPage';
@@ -28,7 +34,19 @@ const NegativeSpace = (props) => {
 }
 
 
-const App = () => {
+const usePageViews = () => {
+    let location = useLocation();
+
+    React.useEffect(() => {
+        rg4js('trackEvent', { 
+            type: 'pageView', 
+            path: location.pathname 
+        });
+    }, [location]);
+}
+
+
+const MainPage = () => {
     const [viewportWidth, setWidth] = useState(window.innerWidth);
 
     const updateDimensions = () => {
@@ -45,6 +63,8 @@ const App = () => {
     }
 
     let refContext = createRef();
+    usePageViews();
+    
 
     return (
         <div ref={refContext}>
@@ -100,6 +120,21 @@ const App = () => {
                 </Grid>
             </Router>
         </div>
+    );
+}
+
+// Wrapper for the main page to allow use of the useLocation hook
+const App = () => {
+    // Add support for monitoring with Raygun
+    rg4js('apiKey', process.env.RAYGUN_RUM_APIKEY);
+    rg4js('enableCrashReporting', true);
+    rg4js('enablePulse', true);
+    
+
+    return (
+        <Router>
+            <MainPage />
+        </Router>
     );
 }
 
