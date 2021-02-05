@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Masonry from 'react-masonry-css';
-//import InfiniteScroll from 'react-infinite-scroll-component';
 import * as shuffle from 'fisher-yates';
 import { 
     Image, 
@@ -33,10 +32,6 @@ import sklearnIcon from '../../assets/icons/sklearn.png';
 
 
 const Skills = () => {
-    const [cards, setCards] = useState([]);
-    const [numFetchedCards, setNumFetched] = useState(0);
-    const [moreItems, setMoreItems] = useState(true);
-
     let rawSkills = [
         {
             title: "Boost C++",
@@ -201,25 +196,6 @@ const Skills = () => {
                 </Card.Content>
             </Card>
         );
-    }
-
-    // Refresh function to pull a batch of new cards
-    const getMoreCards = (mySkills) => {
-        //console.log("In the getMoreCards function");
-        let remainingSkills = (mySkills.length - numFetchedCards)
-        let numToFetch = remainingSkills >= 4 ? 4 : remainingSkills;
-
-        let newCards = [];
-
-        while(newCards.length < numToFetch) {
-            cards.push(cardFactory(mySkills));
-        }
-
-        setCards(cards + newCards);
-
-        if (cards.length === mySkills.length) {
-            setMoreItems(false);
-        }
     }
 
     // Breakpoints for masonry

@@ -2,11 +2,9 @@ import React, { useState, useEffect, createRef } from 'react';
 import { 
     BrowserRouter as Router, 
     Route, 
-    Switch, 
-    useLocation 
+    Switch
 } from 'react-router-dom';
 import { Grid, Transition, Divider, Sticky } from 'semantic-ui-react';
-import rg4js from 'raygun4js';
 
 import SideBar from './SideBar';
 import LandingPage from './LandingPage';
@@ -34,19 +32,7 @@ const NegativeSpace = (props) => {
 }
 
 
-const usePageViews = () => {
-    let location = useLocation();
-
-    React.useEffect(() => {
-        rg4js('trackEvent', { 
-            type: 'pageView', 
-            path: location.pathname 
-        });
-    }, [location]);
-}
-
-
-const MainPage = () => {
+const App = () => {
     const [viewportWidth, setWidth] = useState(window.innerWidth);
 
     const updateDimensions = () => {
@@ -63,7 +49,6 @@ const MainPage = () => {
     }
 
     let refContext = createRef();
-    usePageViews();
     
 
     return (
@@ -106,9 +91,7 @@ const MainPage = () => {
                                     <Route path="/skillset" component={Skills} />
                                     <Route path="/portfolio" component={Portfolio} />
                                     <Route path="/about-me" component={AboutMe} />
-                                    <Route path="/contact">
-                                        <Contact isMobile={isMobile()} />
-                                    </Route>
+                                    <Route path="/contact" component={Contact} />
                                     <Route component={ErrorPage} />
                                 </Switch>
                             </div>
@@ -120,21 +103,6 @@ const MainPage = () => {
                 </Grid>
             </Router>
         </div>
-    );
-}
-
-// Wrapper for the main page to allow use of the useLocation hook
-const App = () => {
-    // Add support for monitoring with Raygun
-    rg4js('apiKey', process.env.RAYGUN_RUM_APIKEY);
-    rg4js('enableCrashReporting', true);
-    rg4js('enablePulse', true);
-    
-
-    return (
-        <Router>
-            <MainPage />
-        </Router>
     );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, InlineIcon } from '@iconify/react';
+import { Icon } from '@iconify/react';
 import leetcodeIcon from '@iconify-icons/simple-icons/leetcode';
 
 import '../css/ProfileLinks.css';

@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import EmailValidator from 'email-validator';
-//import ReCAPTCHA from 'react-google-recaptcha';
 import { 
     Form,
     Message,
@@ -39,7 +38,7 @@ async function sendEmail(data) {
 
 
 // TODO: Fix the submit button 'shake' when input is invalid.
-const Contact = (props) => {
+const Contact = () => {
     /* Hooks for form input and validation */
     const [nameInput, setName] = useState("");
     const [emailInput, setEmail] = useState("");
@@ -63,7 +62,6 @@ const Contact = (props) => {
     const [contactFormMessageSent, setEmailSentStatus] = useState(false);
     const [confirmMessageOpen, displayConfirmMessage] = useState(false);
     const [pendingEmail, setPending] = useState(false);
-    //const [triggerSubmitErrorShake, setShake] = useState(false);
     const [messageSentSuccess, setMessageSent] = useState(false);
 
   

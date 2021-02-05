@@ -28,12 +28,6 @@ const RedirectLinks = () => {
             <Divider hidden />
             <Divider hidden />
             <ProfileLinks />
-            {/*
-            <Popup 
-                content="Something went wrong while downloading. Please try again later."
-                pinned
-                trigger={downloadError}
-            />*/}
             <Button 
                 icon={downloadError? 'ban' : 'cloud download'}
                 content={downloadError ? 'Download Failed': 'Download My Resume'}
