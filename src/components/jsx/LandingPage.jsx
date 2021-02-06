@@ -1,12 +1,24 @@
-import React from 'react';
-import { Container, Grid, Header, Image } from 'semantic-ui-react';
+import React, { useState } from 'react';
+import Typewriter from 'typewriter-effect';
+import { 
+  Container, 
+  Grid, 
+  Header, 
+  Image, 
+  Transition 
+} from 'semantic-ui-react';
 
 import '../css/LandingPage.css';
 
 import landingPagePic from '../../assets/images/profile-pic.jpg';
 
 
-const LandingPage = () => {
+const LandingPage = (props) => {
+  const [isInitial, setInitialLoad] = useState(props.isInitial);
+  const [doneTyping, setDone] = useState(!(props.isInitial));
+
+  console.log("Initial state of done typing: ", doneTyping);
+ 
   return (
     <React.Fragment>
       <Grid
@@ -19,13 +31,37 @@ const LandingPage = () => {
         stackable
       >
         <Grid.Row textAlign='justified'>
-          <Header 
-            as="h1" 
-            className="landing-page-header"
-            dividing
-          >
-            Hi, I'm<font color='#1dbf94'>&nbsp;Justin Sumner</font>
-          </Header>
+          { isInitial ?
+            <Header 
+              as="h1"
+              className="landing-page-header"
+              dividing
+            >
+              <Typewriter
+                onInit={(typewriter) => {
+                  typewriter.pauseFor(600)
+                    .changeDelay(125)
+                    .typeString("Hi, I'm Justin Sumner")
+                    .pauseFor(500)
+                    .callFunction(() => {
+                      setInitialLoad(false);
+                      setDone(true);
+                    })
+                    .start();
+                }}
+              />
+            </Header>
+            :
+            <Transition visible={doneTyping} animation='fade' duration={1500}>
+              <Header 
+                as="h1" 
+                className="landing-page-header"
+                dividing
+              >
+                Hi, I'm<font color='#1dbf94'>&nbsp;Justin Sumner</font>
+              </Header>
+            </Transition>
+          }
         </Grid.Row>
         <Grid.Row>
           <Grid.Column stretched width={6}>

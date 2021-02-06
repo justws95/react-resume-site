@@ -34,6 +34,7 @@ const NegativeSpace = (props) => {
 
 const App = () => {
     const [viewportWidth, setWidth] = useState(window.innerWidth);
+    const [initialLoad, setInitialLoad] = useState(true);
 
     const updateDimensions = () => {
         setWidth(window.innerWidth);
@@ -47,6 +48,12 @@ const App = () => {
     const isMobile = () => {
         return (viewportWidth <= 1100);
     }
+
+    useEffect(() => {
+        if (initialLoad) {
+            setInitialLoad(false);
+        }
+    }, [initialLoad]);
 
     let refContext = createRef();
     
@@ -86,7 +93,9 @@ const App = () => {
                             <div className='content-window'>
                                 <div className='color-bar-header' />
                                 <Switch>
-                                    <Route exact path="/" component={LandingPage} />
+                                    <Route exact path="/">
+                                        <LandingPage isInitial={initialLoad} />
+                                    </Route>
                                     <Route path="/resume" component={WebResume} />
                                     <Route path="/skillset" component={Skills} />
                                     <Route path="/portfolio" component={Portfolio} />

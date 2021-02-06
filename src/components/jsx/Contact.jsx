@@ -237,11 +237,7 @@ const Contact = () => {
                             size='big'
                             loading={pendingEmail}
                             onClick={() => {
-                                if (!(testMessageReady())) {
-                                    //setShake(true);
-                                    //setShake(false);
-                                }
-                                else {
+                                if (testMessageReady()) {
                                     displayConfirmMessage(true);
                                 }
                             }}
@@ -256,15 +252,6 @@ const Contact = () => {
                             }
                         </Button>
                     </Transition>
-                    {/*  
-                    <ReCAPTCHA
-                        size='invisible'
-                        sitekey="6LfziwUaAAAAAJiR11ufQuvMEZm_dMMoKyHECwG6"
-                        onChange={val => {
-                            console.log("Captcha value: ", val);
-                        }}
-                    />
-                    */}
                 </Form>
                 <Divider hidden />
             </Container>

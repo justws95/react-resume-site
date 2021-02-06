@@ -263,31 +263,6 @@ const Skills = () => {
                     <Divider hidden />
                 </Grid.Row>
                 <Grid.Row textAlign='justified'>
-                    {/*
-                    <InfiniteScroll
-                        dataLength={cards.length}
-                        next={getMoreCards}
-                        hasMore={moreItems}
-                        loader={
-                            <p style={{ textAlign: 'center' }}>
-                                <b>Loading...</b>
-                            </p>
-                        }
-                        endMessage={
-                            <p style={{ textAlign: 'center' }}>
-                                <b>No more items to load</b>
-                            </p>
-                        }
-                    >
-                        <Masonry
-                            breakpointCols={breakpointColumnsObj}
-                            className="skills-masonry-grid"
-                            columnClassName="skills-masonry-grid-column"
-                        >
-                            {cards}
-                        </Masonry>
-                    </InfiniteScroll>
-                    */}
                     <Masonry
                         breakpointCols={breakpointColumnsObj}
                         className="skills-masonry-grid"
