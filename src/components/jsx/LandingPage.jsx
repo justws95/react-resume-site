@@ -41,7 +41,13 @@ const LandingPage = (props) => {
                 onInit={(typewriter) => {
                   typewriter.pauseFor(600)
                     .changeDelay(125)
-                    .typeString("Hi, I'm Justin Sumner")
+                    .typeString("Hi  ")
+                    .pauseFor(1000)
+                    .deleteChars(2)
+                    .typeString(", I'm Jsut")
+                    .pauseFor(250)
+                    .deleteChars(3)
+                    .typeString("ustin Sumner")
                     .pauseFor(500)
                     .callFunction(() => {
                       setInitialLoad(false);
