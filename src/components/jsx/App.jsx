@@ -13,7 +13,7 @@ import WebResume from './WebResume';
 import Skills from './Skills';
 import Contact from './Contact';
 import Portfolio from './Portfolio';
-import ErrorPage from './ErrorPage';
+import NoMatch from './NoMatch';
 import HamburgerMenu from './HamburgerMenu';
 
 import '../css/App.css';
@@ -101,7 +101,7 @@ const App = () => {
                                     <Route path="/portfolio" component={Portfolio} />
                                     <Route path="/about-me" component={AboutMe} />
                                     <Route path="/contact" component={Contact} />
-                                    <Route component={ErrorPage} />
+                                    <Route component={NoMatch} />
                                 </Switch>
                             </div>
                         </Grid.Column>

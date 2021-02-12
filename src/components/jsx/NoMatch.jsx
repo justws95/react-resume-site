@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Container, Button, Image, Header } from 'semantic-ui-react';
 
-import '../css/ErrorPage.css';
+import '../css/NoMatch.css';
 
 import youAreLost from '../../assets/images/youre-lost.png';
 
 
-const ErrorPage = () => {
+const NoMatch = () => {
     return (
         <Grid 
             as={Container} 
@@ -39,4 +39,4 @@ const ErrorPage = () => {
     );
 }
 
-export default ErrorPage;
+export default NoMatch;

@@ -6,9 +6,10 @@ import ProfileLinks from './ProfileLinks';
 
 import '../css/SideBar.css';
 
+import resumePDF from "../../assets/static/Justin-Sumner-Resume.pdf";
+
 
 const SideBarHeader = () => {
-
     return (
         <div className='header-group'>
             <Divider hidden />
@@ -66,8 +67,15 @@ const RedirectLinks = () => {
                 </Button.Content>
                 <Button.Content hidden>
                     <Icon name="download" />
+                    <Link to="/public/Justin-Sumner-Resume.pdf" download target="_self" />
                 </Button.Content>
             </Button>
+            
+
+            <a href="/public/Justin-Sumner-Resume.pdf" download target="_self">
+                <p>Click to download</p>
+            </a>
+
         </React.Fragment>
     );
 }
