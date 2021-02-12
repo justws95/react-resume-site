@@ -17,4 +17,11 @@
     background-color: #313332;
     margin-left: 5%;
     width: 90%;
+    transition: all 0.3s ease 0s;
+}
+
+
+.ui.button.resume-download-button:hover {
+    background-color: #0ddba4e7;
+    color: #3b3d3b;
 }

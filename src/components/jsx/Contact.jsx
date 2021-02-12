@@ -231,7 +231,7 @@ const Contact = () => {
                         <Button 
                             fluid
                             disabled={messageSentSuccess}
-                            animated={messageSentSuccess ? false : 'fade'}
+                            animated={messageSentSuccess ? false : 'vertical'}
                             content={contactFormMessageSent ? 'Message Sent!' : 'Send Message'}
                             className='contact-page-button'
                             size='big'

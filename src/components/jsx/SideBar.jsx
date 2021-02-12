@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, Button, Divider } from 'semantic-ui-react';
+import { Menu, Button, Divider, Icon } from 'semantic-ui-react';
 
 import ProfileLinks from './ProfileLinks';
 
@@ -20,7 +20,6 @@ const SideBarHeader = () => {
 
 
 const RedirectLinks = () => {
-    const [downloadError, setDownloadError] = useState(false);
     const [resumeDownloadPending, setPendingDownload] = useState(false);
 
     return (
@@ -29,8 +28,7 @@ const RedirectLinks = () => {
             <Divider hidden />
             <ProfileLinks />
             <Button 
-                icon={downloadError? 'ban' : 'cloud download'}
-                content={downloadError ? 'Download Failed': 'Download My Resume'}
+                animated
                 fluid
                 size='small'
                 className='resume-download-button'
@@ -56,14 +54,20 @@ const RedirectLinks = () => {
                         window.open(fileURL);
                     })
                     .catch(error => {
-                        setDownloadError(true);
                         console.log(error);
                     })
                     .finally(() => {
                         setPendingDownload(false);
                     });
                 }}
-            />
+            >
+                <Button.Content visible>
+                    Download My Resume
+                </Button.Content>
+                <Button.Content hidden>
+                    <Icon name="download" />
+                </Button.Content>
+            </Button>
         </React.Fragment>
     );
 }

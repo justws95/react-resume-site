@@ -1,6 +1,12 @@
 .ui.fluid.button.contact-page-button{
     color: #0ddba4;
-    background-color: #313332;
+    background-color: #343635;
+    transition: all 0.3s ease 0s;
+}
+
+.ui.fluid.button.contact-page-button:hover{
+    background-color: #0ddba4e7;
+    color: #2b2e2c;
 }
 
 .contact-page-contact-window {
