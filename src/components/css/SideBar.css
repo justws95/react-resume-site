@@ -9,7 +9,7 @@
 
 .header-group h3 {
     margin-top: 0%;
-    color: rgb(13, 219, 164);
+    color: #0ddba4;
 }
 
 .ui.button.resume-download-button {
@@ -20,8 +20,8 @@
     transition: all 0.3s ease 0s;
 }
 
-
 .ui.button.resume-download-button:hover {
     background-color: #0ddba4e7;
     color: #3b3d3b;
 }
+

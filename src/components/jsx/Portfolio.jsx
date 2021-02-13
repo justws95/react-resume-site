@@ -5,7 +5,7 @@ import { Divider } from 'semantic-ui-react';
 
 import PageHeader from './PageHeader';
 
-import '../css/Portfolio.css';
+import '../css/Portfolio.scss';
 
 import gameOfLifeGif from '../../assets/images/game-of-life.gif';
 import resumeWebsitePNG from '../../assets/images/Resume-website.png';

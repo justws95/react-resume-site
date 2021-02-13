@@ -12,7 +12,7 @@
     "email-validator": "^2.0.4",
     "firebase": "^8.2.6",
     "fisher-yates": "^1.0.3",
-    "node-sass": "^5.0.0",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "pure-react-carousel": "^1.27.6",
     "raygun4js": "^2.21.1",

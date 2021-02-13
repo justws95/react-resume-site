@@ -6,8 +6,6 @@ import ProfileLinks from './ProfileLinks';
 
 import '../css/SideBar.css';
 
-import resumePDF from "../../assets/static/Justin-Sumner-Resume.pdf";
-
 
 const SideBarHeader = () => {
     return (
@@ -21,7 +19,7 @@ const SideBarHeader = () => {
 
 
 const RedirectLinks = () => {
-    const [resumeDownloadPending, setPendingDownload] = useState(false);
+    const [clickedDownload, setClicked] = useState(false);
 
     return (
         <React.Fragment>
@@ -33,49 +31,25 @@ const RedirectLinks = () => {
                 fluid
                 size='small'
                 className='resume-download-button'
-                loading={resumeDownloadPending}
-                onClick={e => {
-                    const fileURL = 'https://js-resume-site-api.herokuapp.com/downloads?document=resume';
-
-                    setPendingDownload(true);
-
-                    fetch(fileURL, {
-                        method: "GET",
-                        headers: {
-                            "Content-Type": "application/pdf"
-                        }
-                    })
-                    .then(res => res.blob())
-                    .then(response => {
-                        const file = new Blob([response], {
-                            type: "application/pdf"
-                        });
-
-                        const fileURL = URL.createObjectURL(file);                                
-                        window.open(fileURL);
-                    })
-                    .catch(error => {
-                        console.log(error);
-                    })
-                    .finally(() => {
-                        setPendingDownload(false);
-                    });
+                as="a"
+                href="/downloads/Justin-Sumner-Resume.pdf" 
+                download 
+                target="_self"
+                onClick={() => {
+                    setClicked(true);
                 }}
             >
                 <Button.Content visible>
                     Download My Resume
                 </Button.Content>
                 <Button.Content hidden>
-                    <Icon name="download" />
-                    <Link to="/public/Justin-Sumner-Resume.pdf" download target="_self" />
+                    { clickedDownload ?
+                        "Thanks for Downloading!"
+                    :
+                        <Icon name="download" />
+                    }
                 </Button.Content>
             </Button>
-            
-
-            <a href="/public/Justin-Sumner-Resume.pdf" download target="_self">
-                <p>Click to download</p>
-            </a>
-
         </React.Fragment>
     );
 }
@@ -85,9 +59,9 @@ const SideBar = () => {
     const [activeItem, setActive] = useState(useLocation().pathname);
     
     return (
-        <Menu 
-            inverted 
-            vertical 
+        <Menu
+            vertical
+            inverted
             fixed='left' 
             size='large'
         >
