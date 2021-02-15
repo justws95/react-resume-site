@@ -222,6 +222,10 @@ const slides = [
 
 const Portfolio = () => {
     const [state, dispatch] = useReducer(slidesReducer, initialState);
+
+    useEffect(() => {
+        document.title = "Portfolio";
+    });
   
     return (
         <React.Fragment className="slides">

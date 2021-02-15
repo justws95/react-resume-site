@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React, { createRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Button, Divider, Container, Sticky, Ref } from 'semantic-ui-react';
 import { CarouselProvider, Image, Slide, Slider, Dot } from 'pure-react-carousel';
@@ -38,6 +38,11 @@ const  AboutMe = () => {
         slides: PropTypes.number.isRequired,
         size: PropTypes.string
     };
+
+
+    useEffect(() => {
+        document.title = "About Me";
+    });
     
 
     return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Grid, Container, Button, Image, Header } from 'semantic-ui-react';
 
@@ -8,6 +8,10 @@ import youAreLost from '../../assets/images/youre-lost.png';
 
 
 const NoMatch = () => {
+    useEffect(() => {
+        document.title = "That's a 404";
+    });
+
     return (
         <Grid 
             as={Container} 

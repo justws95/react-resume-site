@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Masonry from 'react-masonry-css';
 import * as shuffle from 'fisher-yates';
 import { 
@@ -32,7 +32,11 @@ import sklearnIcon from '../../assets/icons/sklearn.png';
 
 
 const Skills = () => {
-    let rawSkills = [
+    useEffect(() => {
+        document.title = "My Skills";
+    });
+
+    const rawSkills = [
         {
             title: "Boost C++",
             icon: boostCppIcon,
