@@ -19,8 +19,6 @@ const SideBarHeader = () => {
 
 
 const RedirectLinks = () => {
-    const [clickedDownload, setClicked] = useState(false);
-
     return (
         <React.Fragment>
             <Divider hidden />
@@ -35,21 +33,14 @@ const RedirectLinks = () => {
                 href="/downloads/Justin-Sumner-Resume.pdf" 
                 download 
                 target="_self"
-                onClick={() => {
-                    setClicked(true);
-                }}
             >
                 <Button.Content visible>
                     Download My Resume
                 </Button.Content>
                 <Button.Content hidden>
-                    { clickedDownload ?
-                        "Thanks for Downloading!"
-                    :
-                        <Icon name="download" />
-                    }
+                    <Icon name="download" />
                 </Button.Content>
-            </Button>
+            </Button>  
         </React.Fragment>
     );
 }

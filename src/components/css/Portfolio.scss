@@ -1,21 +1,14 @@
-.portfolio-masonry-grid {
+.portfolio-window {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
   width: auto;
+  background-color: #111111;
 }
 
-.portfolio-masonry-grid-column {
-  padding: 20px;
-  background-clip: padding-box;
-}
-  
-.portfolio-masonry-grid-column > div { 
-  background: grey;
-  margin-bottom: 30px;
-}
 
 *,
 *::before,
@@ -62,17 +55,6 @@
   }
 }
 
-.slide {
-  //transform-style: preserve-3d;
-  // border: solid 1px red;
-
-  // &[data-active] {
-  //   .slideContent > * {
-  //     transform: none;
-  //     opacity: 1;
-  //   }
-  // }
-}
 
 .slideContent {
   width: 30vw;
