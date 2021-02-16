@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Divider, Header, Icon, Container } from 'semantic-ui-react';
 
 import PageHeader from './PageHeader';
@@ -7,6 +7,10 @@ import '../css/WebResume.css';
 
 
 const WebResume = () => {
+
+    useEffect(() => {
+        document.title = "Resume";
+    });
 
     return (
         <React.Fragment>

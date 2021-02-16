@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import EmailValidator from 'email-validator';
 import { 
     Form,
@@ -63,6 +63,11 @@ const Contact = () => {
     const [confirmMessageOpen, displayConfirmMessage] = useState(false);
     const [pendingEmail, setPending] = useState(false);
     const [messageSentSuccess, setMessageSent] = useState(false);
+    
+    
+    useEffect(() => {
+        document.title = "Contact Me";
+    });
 
   
     let testMessageReady = () => {

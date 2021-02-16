@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Typewriter from 'typewriter-effect';
 import { 
   Container, 
@@ -17,8 +17,10 @@ const LandingPage = (props) => {
   const [isInitial, setInitialLoad] = useState(props.isInitial);
   const [doneTyping, setDone] = useState(!(props.isInitial));
 
-  console.log("Initial state of done typing: ", doneTyping);
- 
+  useEffect(() => {
+    document.title = "Justin Sumner";
+  });
+
   return (
     <React.Fragment>
       <Grid
@@ -35,7 +37,6 @@ const LandingPage = (props) => {
             <Header 
               as="h1"
               className="landing-page-header"
-              dividing
             >
               <Typewriter
                 onInit={(typewriter) => {
@@ -50,6 +51,7 @@ const LandingPage = (props) => {
                     .callFunction(() => {
                       setInitialLoad(false);
                       setDone(true);
+                      props.setDoneFromChild(true);
                     })
                     .start();
                 }}

@@ -128,6 +128,10 @@ function Slide({ slide, offset }) {
 const Portfolio = () => {
     const [state, dispatch] = useReducer(slidesReducer, initialState);
 
+    useEffect(() => {
+        document.title = "Portfolio";
+    });
+  
     return (
         <div className="slides">
             <PageHeader title="Portfolio" />

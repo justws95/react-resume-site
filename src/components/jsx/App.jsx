@@ -4,7 +4,12 @@ import {
     Route, 
     Switch
 } from 'react-router-dom';
-import { Grid, Transition, Divider, Sticky } from 'semantic-ui-react';
+import { 
+    Grid, 
+    Transition, 
+    Divider, 
+    Sticky 
+} from 'semantic-ui-react';
 
 import SideBar from './SideBar';
 import LandingPage from './LandingPage';
@@ -35,6 +40,13 @@ const NegativeSpace = (props) => {
 const App = () => {
     const [viewportWidth, setWidth] = useState(window.innerWidth);
     const [initialLoad, setInitialLoad] = useState(true);
+    const [doneTyping, setDone] = useState(false);
+
+
+    const setDoneFromChild = () => {
+        setDone(true);
+        console.log("Set done was called!!!");
+    }
 
     const updateDimensions = () => {
         setWidth(window.innerWidth);
@@ -58,6 +70,7 @@ const App = () => {
     let refContext = createRef();
     
 
+    // TODO: Evaluate the use of fade for sidebar. Flesh out if desired.
     return (
         <div ref={refContext}>
             <Router>
@@ -70,14 +83,13 @@ const App = () => {
                     <Grid.Row stretched fluid>
                         { (!(isMobile()))  &&
                             <Grid.Column width={viewportWidth > 1400 ? 2 : 3} stretched>
-                                <Transition.Group
+                                <Transition 
+                                    visible={true} 
                                     animation='fade right' 
-                                    duration='1200'
-                                    >
-                                    <Transition visible={true} transitionOnMount={true}>
-                                        <SideBar />
-                                    </Transition>
-                                </Transition.Group>
+                                    duration={1}
+                                >
+                                    <SideBar />
+                                </Transition>
                             </Grid.Column>
                         }
                         <Grid.Column stretched width={isMobile ? 1 : 0}>
@@ -94,7 +106,10 @@ const App = () => {
                                 <div className='color-bar-header' />
                                 <Switch>
                                     <Route exact path="/">
-                                        <LandingPage isInitial={initialLoad} />
+                                        <LandingPage 
+                                            isInitial={initialLoad} 
+                                            setDoneFromChild={setDoneFromChild}
+                                        />
                                     </Route>
                                     <Route path="/resume" component={WebResume} />
                                     <Route path="/skillset" component={Skills} />
